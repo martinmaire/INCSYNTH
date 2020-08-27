@@ -168,7 +168,7 @@ var synth = new Tone.PolySynth(8, Tone.Synth, {
         }
           
           
-		]).start('0');
+		])/*.start('0')*/;
 //////////////////////////////////////////
 
 var part2 = new Tone.Part(function(time, note){
@@ -352,9 +352,7 @@ var cursor = 1;
 
 
 function setup() {
-	
-	Tone.start();
-  Tone.Transport.start();
+  
 
   createCanvas(windowWidth, windowHeight);
 
@@ -379,21 +377,7 @@ sel.changed(mySelectEvent);
   
 
 
- var options = {
-    preventDefault: true
-  };
-var hammer = new Hammer(document.body, options);
-  hammer.get('swipe').set({
-    direction: Hammer.DIRECTION_ALL
-  });
-
-  hammer.on("swipe", swiped);
-  
  
-
-  
-  
-}
 
 
 
@@ -417,8 +401,8 @@ function mySelectEvent() {
 
   if (item == 'SYNTH') {
 
-    
-       
+    Tone.start();
+       Tone.Transport.start();
     part1.loop = true;
 part1.loopStart = '0';
 part1.loopEnd = '4';
@@ -489,7 +473,81 @@ function draw() {
 
 
   
+    stroke(255, 0, 97, 170);
+  strokeWeight(7);
   
+  line(width-140,  height/2, width-100,  height/2+50);
+  line(width-100,  height/2+50, width-140,  height/2+100);
+  
+  line(width-120,  height/2, width-80,  height/2+50);
+  line(width-80,  height/2+50, width-120,  height/2+100);
+
+line(width-100,  height/2, width-60,  height/2+50);
+  line(width-60,  height/2+50, width-100,  height/2+100);
+
+  ////
+
+
+
+
+noStroke();
+
+  textSize(42);
+  textAlign(CENTER, CENTER);
+  //displaying number of clicks
+  fill(20);
+  text("inC PHONE", windowWidth/2, windowHeight/15);
+
+rect(width-100, 40, width, 30);
+fill(255);
+  textSize(8);
+  text("Composition de Terry Riley", width-50, 50);
+  text("Dévellopé par Martin Maire", width-50, 60);
+  
+ 
+
+
+
+textSize(10);
+ fill(0, 255, 255);
+
+ //ellipse(width/2, height/2+50, 100+vol*1500, 100+vol*1500);
+
+ fill(255, 255, 255);
+// ellipse(width/2, height/2+50, 10+vol*1500, 10+vol*1500);
+  //text formatting
+  noStroke();
+  fill(40);
+  text("choisissez votre instrument", 20, 20);
+
+text("Touchez-glissez (droite ou gauche) pour changer de phrase", width/2, height/2+120);
+  textSize(80);
+  textAlign(CENTER, CENTER);
+  //displaying number of clicks
+  fill(20);
+
+
+  imageMode(CENTER);
+ // image(imgs[clicks], width/2, height/3.2, imgs[clicks].width*1.5, imgs[clicks].height*1.5);
+
+stroke(255, 255, 0, 160);
+  strokeWeight(40);
+
+ soundVolume = map(abs(rotationY), 0, 80, 0, 1);
+ line(30, windowHeight -70, constrain(abs(rotationY*2.5), 30, windowWidth -30), windowHeight -70);
+  
+    noStroke();
+
+ textSize(20);
+//  text("Filtre: " + nf(rotationX, 0, 2), 100, constrain(abs(rotationX*10+windowHeight -100));
+  text("Volume: " + nf(soundVolume, 0, 2), constrain(abs(rotationY*2.5) + 100, 100, windowHeight -70), windowHeight -70);
+
+
+   count = clicks + X1;
+ volume =  map(abs(rotationY), 0, 200, 0, 2);
+    volume = constrain(volume, 0, 1);
+  
+
 
 }
 
