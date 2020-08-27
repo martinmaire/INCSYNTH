@@ -168,7 +168,7 @@ var synth = new Tone.PolySynth(8, Tone.Synth, {
         }
           
           
-		])/*.start('0')*/;
+		]).start('0');
 //////////////////////////////////////////
 
 var part2 = new Tone.Part(function(time, note){
