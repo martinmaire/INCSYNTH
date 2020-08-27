@@ -352,6 +352,8 @@ var cursor = 1;
 
 
 function setup() {
+	
+	Tone.start();
   Tone.Transport.start();
 
   createCanvas(windowWidth, windowHeight);
