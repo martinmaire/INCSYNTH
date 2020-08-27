@@ -352,7 +352,7 @@ var cursor = 1;
 
 
 function setup() {
-  
+  Tone.Transport.start();
 
   createCanvas(windowWidth, windowHeight);
 
@@ -416,7 +416,7 @@ function mySelectEvent() {
   if (item == 'SYNTH') {
 
     
-       Tone.Transport.start();
+       
     part1.loop = true;
 part1.loopStart = '0';
 part1.loopEnd = '4';
