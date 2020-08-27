@@ -2,7 +2,7 @@ var synth = new Tone.PolySynth(8, Tone.Synth, {
 			"oscillator" : {
 				"partials" : [0, 2, 3, 4, 5, 6, 7, 8, 9],
 			}
-		}).toMaster();
+		}).toDestination();
 
 
 
